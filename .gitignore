@@ -1,0 +1,3 @@
+project/cache/*
+!project/cache/.gitignore
+*.swp
