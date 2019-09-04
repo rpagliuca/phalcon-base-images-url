@@ -55,18 +55,18 @@ $di->setShared('view', function () {
 
             $volt = new VoltEngine($view, $this);
 
-$volt->setOptions([
-    'compiledPath' => $config->application->cacheDir,
-    'compiledSeparator' => '_',
-    'compileAlways' => true
-]);
+            $volt->setOptions([
+                'compiledPath' => $config->application->cacheDir,
+                'compiledSeparator' => '_',
+                'compileAlways' => true
+            ]);
 
-$volt->getCompiler()->addFunction(
-    'baseImagesURL',
-    function ($url) {
-        return '$this->baseImagesURLService->get(' . $url . ');';
-    }
-);
+            $volt->getCompiler()->addFunction(
+                'baseImagesURL',
+                function ($url) {
+                    return '$this->baseImagesURLService->get(' . $url . ');';
+                }
+            );
 
             return $volt;
         },
